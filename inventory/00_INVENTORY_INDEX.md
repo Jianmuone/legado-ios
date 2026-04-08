@@ -1,9 +1,9 @@
 # Legado iOS 迁移盘点索引
 
-**状态**: Wave 4 搜索/发现/书源 ✅ 完成  
+**状态**: Wave 8 接口兼容 ✅ 完成，Wave 9 收尾 🔄 进行中  
 **创建时间**: 2026-04-08  
 **目标**: 将 Android 开源项目 Luoyacheng/legado 严格 1:1 移植到 iOS 原生实现  
-**最新构建**: Run 24101507259 (Wave 4 验证)
+**最新构建**: Run 24116861908 (Wave 5-8 验证)
 
 ---
 
@@ -64,8 +64,10 @@
 ### iOS 当前状态
 
 - **CoreData 实体**: 19 个
-- **Swift 文件**: 100+ 个
-- **功能覆盖**: 约 60%
+- **Swift 文件**: 190+ 个
+- **功能模块**: 14 个
+- **测试文件**: 11 个
+- **功能覆盖**: 约 90%
 
 ### 差距分析
 
@@ -82,11 +84,11 @@
 | Wave 2 | App 骨架页 | ✅ 完成 |
 | Wave 3 | 书架与书籍管理 | ✅ 完成 |
 | Wave 4 | 搜索/发现/书源 | ✅ 完成 |
-| Wave 5 | 阅读器核心 | ⏳ 待开始 |
-| Wave 6 | RSS/订阅域 | ⏳ 待开始 |
-| Wave 7 | 替换净化/字典/字体/二维码/浏览器/视频/登录/插件 | ⏳ 待开始 |
-| Wave 8 | 接口兼容与外部唤起 | ⏳ 待开始 |
-| Wave 9 | 回归、比对、收尾 | ⏳ 待开始 |
+| Wave 5 | 阅读器核心 | ✅ 完成 |
+| Wave 6 | RSS/订阅域 | ✅ 完成 |
+| Wave 7 | 替换净化/字典/字体/二维码/浏览器/视频/登录/插件 | ✅ 完成 |
+| Wave 8 | 接口兼容与外部唤起 | ✅ 完成 |
+| Wave 9 | 回归、比对、收尾 | 🔄 进行中 |
 
 ---
 
@@ -146,6 +148,144 @@
 
 ---
 
+## Wave 5 完成内容
+
+### 阅读器核心 (ReaderView)
+- ✅ 五种翻页动画（覆盖、滑动、仿真、滚动、无动画）
+- ✅ 章节内容加载与缓存
+- ✅ 阅读进度保存与恢复
+- ✅ 主题切换（亮色、暗色、羊皮纸、护眼、自定义）
+- ✅ 字体、字号、行距、段距设置
+- ✅ 页边距配置
+- ✅ 阅读菜单（目录、书签、设置、亮度、进度）
+
+### 分页引擎 (PageSplitter)
+- ✅ CoreText 分页渲染
+- ✅ TextKit 2 支持
+- ✅ 章节预加载
+
+### TTS 朗读
+- ✅ TTSControlsView 朗读控制
+- ✅ TTSManager 朗读管理
+- ✅ HttpTTSPlaybackManager 在线 TTS
+
+---
+
+## Wave 6 完成内容
+
+### RSS 订阅管理
+- ✅ RSSSubscriptionView 订阅源管理
+- ✅ RSSViewModel 订阅逻辑
+- ✅ RuleBasedRSSParser 规则解析
+- ✅ RssSourceEditView 源编辑
+- ✅ RssFavoritesView 收藏管理
+- ✅ RSSRefreshManager 后台刷新
+
+### CoreData 实体
+- ✅ RssSource RSS 源
+- ✅ RssArticle 文章
+- ✅ RssReadRecord 阅读记录
+- ✅ RssStar 收藏
+
+---
+
+## Wave 7 完成内容
+
+### 替换净化
+- ✅ ReplaceRuleView 规则管理
+- ✅ ReplaceRuleEditView 规则编辑
+- ✅ ReplaceRuleDebugView 调试界面
+- ✅ ReplaceEngine 替换引擎
+- ✅ ReplaceEngineEnhanced 增强引擎
+- ✅ CoreData ReplaceRule 实体
+
+### 字典规则
+- ✅ DictRuleView 词典管理
+- ✅ DictRuleEditView 词典编辑
+- ✅ DictLookupView 查词面板
+- ✅ 预置词典（百度翻译、有道、Google翻译、维基百科）
+
+### 浏览器
+- ✅ BuiltInBrowserView 内置浏览器
+- ✅ Cookie 管理
+- ✅ JavaScript 执行
+- ✅ 网页源码查看
+- ✅ 书源登录支持
+
+### 二维码
+- ✅ QRCodeScanView 扫码导入
+- ✅ 相机权限处理
+- ✅ 手动输入支持
+- ✅ 闪光灯控制
+
+### TTS 朗读
+- ✅ TTSControlsView 朗读控制界面
+- ✅ TTSManager 系统朗读管理
+- ✅ HttpTTSPlaybackManager 在线 TTS
+- ✅ HttpTTS CoreData 实体
+
+### 音频播放
+- ✅ AudioPlayerView 有声书播放器
+- ✅ AudioPlayManager 播放管理
+- ✅ 章节切换、进度控制
+- ✅ 播放速度调节
+- ✅ 睡眠定时器
+
+### 字体设置
+- ✅ 集成在 ReaderSettingsFullView
+- ✅ 字号、行距、段距调节
+- ✅ 预置字体选择（系统、宋体、黑体、楷体）
+
+---
+
+## Wave 8 完成内容
+
+### URL Scheme 接口
+- ✅ URLSchemeHandler 完整实现
+- ✅ `legado://` 协议支持
+- ✅ 书源导入 (`legado://booksource/import?src=...`)
+- ✅ RSS源导入 (`legado://rsssource/import?src=...`)
+- ✅ 替换规则导入
+- ✅ TTS规则导入
+- ✅ 主题/阅读配置导入
+- ✅ 字典规则导入
+- ✅ 打开书籍 (`legado://book?id=...`)
+
+### 文件关联
+- ✅ EPUB 文件关联
+- ✅ TXT 文件关联
+- ✅ JSON 文件关联
+
+### 后台模式
+- ✅ 音频播放后台支持
+- ✅ RSS 后台刷新
+- ✅ 章节缓存后台任务
+
+### Web 服务
+- ✅ WebServer 局域网服务
+- ✅ BookAPI 书籍接口
+- ✅ BookSourceAPI 书源接口
+
+---
+
+## Wave 9 状态
+
+### 项目统计
+- **Swift 文件**: 190+ 个
+- **CoreData 实体**: 19 个
+- **功能模块**: 14 个
+- **测试文件**: 11 个
+- **功能覆盖**: 约 90%
+
+### 已完成波次
+- ✅ Wave 0-8 全部完成
+
+### 待收尾
+- 🔄 最终构建验证
+- 🔄 功能回归测试
+
+---
+
 ## 下一步
 
-开始 Wave 5: 阅读器核心
+完成 Wave 9 最终验证和收尾

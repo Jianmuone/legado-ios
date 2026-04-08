@@ -1,9 +1,9 @@
 # Legado iOS 迁移盘点索引
 
-**状态**: Wave 9 收尾 ✅ 完成  
+**状态**: 全部 Wave 0-9 完成 ✅ 功能覆盖率 95%+  
 **创建时间**: 2026-04-08  
 **目标**: 将 Android 开源项目 Luoyacheng/legado 严格 1:1 移植到 iOS 原生实现  
-**最新构建**: Run 24116861908 -> a6cef11 (Wave 9 验证)
+**最新构建**: 57f95f7 (Wave 9 最终版)
 
 ---
 
@@ -274,10 +274,20 @@
 - ✅ MyView 我的页面
 - ✅ CacheCleanView 缓存清理
 - ✅ ThemeSettingsView 主题设置
+- ✅ RssSortView RSS排序
 - ✅ RssSourceDebugView RSS源调试
+- ✅ OnLineImportView 在线导入书源
+- ✅ VerificationCodeView 验证码登录
+- ✅ CoverConfigView 封面设置
+- ✅ CodeEditView 代码编辑器
+- ✅ VideoPlayerView 视频播放器
+- ✅ SearchInBookView 书内全文搜索
+- ✅ SourceExportView 书源导出
 - ✅ FileAssociationHandler 文件关联处理
 - ✅ Toast 全局提示工具
 - ✅ LocalBook 本地书籍内容解析
+- ✅ ReadingWidget 阅读进度小组件
+- ✅ ShareExtension 分享扩展
 
 ### BookAPI 完善
 - ✅ refreshToc 刷新目录
@@ -291,11 +301,11 @@
 - ✅ Toast 提示集成
 
 ### 功能覆盖率统计
-- **Activities**: 43 个 → 35 个已实现 (81%)
-- **Fragments**: 17 个 → 14 个已实现 (82%)
+- **Activities**: 43 个 → 41 个已实现 (95%)
+- **Fragments**: 17 个 → 16 个已实现 (94%)
 - **数据实体**: 20 个 → 20 个已实现 (100%)
-- **核心功能**: 45 个 → 42 个已实现 (93%)
-- **总体完成度**: ~90%
+- **核心功能**: 45 个 → 44 个已实现 (98%)
+- **总体完成度**: ~95%
 
 ---
 
@@ -314,8 +324,10 @@
 - ✅ Wave 9: 回归、比对、收尾
 
 ### 项目统计
-- **Swift 文件**: 200+ 个
+- **Swift 文件**: 220+ 个
 - **CoreData 实体**: 19 个
-- **功能模块**: 15 个
+- **功能模块**: 18 个
 - **测试文件**: 11 个
-- **功能覆盖率**: ~90%
+- **Widget**: 2 个
+- **Share Extension**: 1 个
+- **功能覆盖率**: ~95%
